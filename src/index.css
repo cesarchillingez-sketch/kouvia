@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syncopate", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+
+  --color-luxury-gold: #C2A178;
+  --color-luxury-onyx: #0A0A0A;
+  --color-luxury-silk: #E5E5E5;
+  --color-luxury-slate: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-onyx text-luxury-silk font-sans antialiased relative min-h-screen overflow-x-hidden font-light;
+  }
+}
+
+.mesh-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 0% 0%, #1E1B4B 0%, transparent 50%), 
+    radial-gradient(circle at 100% 0%, #2D1B2B 0%, transparent 50%), 
+    radial-gradient(circle at 100% 100%, #1A1A1A 0%, transparent 50%), 
+    radial-gradient(circle at 0% 100%, #141414 0%, transparent 50%);
+  opacity: 0.8;
+  filter: blur(40px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-glass {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tracking-logo {
+  letter-spacing: 0.6em;
+}
+
+.accent-i {
+  position: relative;
+  color: #C2A178;
+}
+
+.accent-i::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+}
+
+.search-input {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-input:focus {
+  border-color: #C2A178;
+  outline: none;
+  padding-left: 8px;
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #2D3436 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5F2ED 50%, #C5B358 100%);
+}
+
+.breathing {
+  animation: breathing 8s ease-in-out infinite;
+}
+
+@keyframes breathing {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.tracking-ultra {
+  letter-spacing: 0.16em;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Kouvia by Ebys Place",
+  "description": "A luxury platform connecting customers with premium braiders. Experience sophistication in every strand.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}
