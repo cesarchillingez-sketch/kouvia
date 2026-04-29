@@ -16,7 +16,7 @@ permissions:
 # Allow only one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -24,12 +24,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Opt-in to Node.js 24 immediately
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
-        
+        uses: actions/checkout@v4 # Confirm this is the latest version
+
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4 # Ensure Node.js 24 support
         with:
           node-version: 24
           cache: 'npm'
